@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\siteController as site;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
+
+Route::post('/checkLogin',[site::class,'checkLogin']);
+Route::get('/home',[site::class,'login']);
+Route::get('/addDoctor',[site::class,'addDoctor']);
+Route::post('/insertDoctor',[site::class,'insertDoctor']);
