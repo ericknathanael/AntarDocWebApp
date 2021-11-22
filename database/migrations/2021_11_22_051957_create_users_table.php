@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->String('user_username');
             $table->string('user_password');
             $table->string('user_nama_lengkap');
+            $table->string('user_email');
             $table->smallInteger('status_user');
             $table->integer('saldo_user');
             $table->text('user_phone_number');
