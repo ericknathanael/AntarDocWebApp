@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->smallInteger('status_user');
             $table->integer('saldo_user');
             $table->text('user_phone_number');
-            $table->binary('user_photo');
+            $table->binary('user_photo')->nullable();
             $table->timestamps();
         });
     }

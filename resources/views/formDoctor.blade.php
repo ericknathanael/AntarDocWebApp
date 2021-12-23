@@ -16,17 +16,21 @@
         </div>
         <div class="col-12">
             <label for="inputAddress">Nama Lengkap</label>
-            <input type="text" class="form-control" id="namaLengkap" placeholder="Dave Malvin">
+            <input type="text" class="form-control" id="namaLengkap" placeholder="Nama Lengkap" name="nama_lengkap">
+        </div>
+        <div class="col-12">
+            <label for="inputAddress">Email Address</label>
+            <input type="email" class="form-control" id="inputAddress" placeholder="Email" name="email_address">
         </div>
         <div class="row g-3">
             <div class="col-8">
-                <label for="inputAddress2">Address</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Jl. Ngagel Jaya Selatan 4 No 27">
+                <label for="inputAddress2">Work Address</label>
+                <input type="text" class="form-control" id="inputAddress2" placeholder="Address" name="Address">
             </div>
             <div class="col-4">
                 <label for="inputState">Provinsi</label>
-                <select id="inputState" class="form-control">
-                <option selected>Pilih Daerah...</option>
+                <select id="inputState" class="form-control" name="inputState">
+                <option value="-" selected>Pilih Daerah...</option>
                 <option value="Jatim">Jawa Timur</option>
                 <option value="Jateng">Jawa Tengah</option>
                 <option value="Jabar">Jawa Barat</option>
@@ -37,22 +41,22 @@
         <div class="row g-3">
             <div class="col-6">
                 <label for="checkbox">Spesialis</label>
-                <select class="form-control custom-control custom-select mb-3"" id="checkbox" required>
+                <select name="inputspesialis" class="form-control custom-control custom-select mb-3"" id="checkbox" required>
                   <option value="1"> - </option>
-                  <option value="2">Jantung </option>
-                  <option value="3">Tulang</option>
-                  <option value="4">Saraf</option>
+                  <option value="Jantung">Jantung </option>
+                  <option value="Tulang">Tulang</option>
+                  <option value="Saraf">Saraf</option>
                 </select>
                 <div class="invalid-feedback">Example invalid custom select feedback</div>
             </div>
 
             <div class="col-4">
-                <label for="inputAddress2">Pengalaman Bekerja</label>
-                <input type="number" class="form-control" id="PengalamanKerja">
+                <label for="inputAddress2">Pengalaman Bekerja (Tahun)</label>
+                <input name="experienceinput" type="number" class="form-control" id="PengalamanKerja">
             </div>
                 <div class="form-group col-2">
                     <label for="nomorTelepon">Nomor Telepon</label>
-                    <input type="text" class="form-control" id="nomorTelepon">
+                    <input name="telephoneinput" type="text" class="form-control" id="nomorTelepon">
                 </div>
             </div>
 
