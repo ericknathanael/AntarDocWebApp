@@ -32,7 +32,10 @@ class siteController extends Controller
 
     public function login()
     {
-        return view('home');
+        $users = doctor::with('users')->get();
+        return view('home',[
+            'doctor' => $users
+        ]);
     }
     public function addDoctor()
     {
@@ -64,7 +67,7 @@ class siteController extends Controller
             'user_password' => Hash::make('123'),
             'user_nama_lengkap' => $req->nama_lengkap,
             'user_email' => $req->email_address,
-            'status_user' => 1,
+            'status_user' => 0,
             'saldo_user' => 0,
             'user_phone_number' => $req->telephoneinput
         ]);

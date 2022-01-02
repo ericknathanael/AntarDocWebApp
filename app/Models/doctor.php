@@ -20,4 +20,9 @@ class doctor extends Model
         'doctor_experience',
         'doctor_specialist',
     ];
+
+    public function users()
+    {
+        return $this->hasOne(users::class,'user_id','user_id');
+    }
 }

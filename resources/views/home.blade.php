@@ -13,34 +13,21 @@
         <th scope="col">Username</th>
         <th scope="col">Name</th>
         <th scope="col">Spesialis</th>
+        <th scope="col">Experience</th>
         <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
-      {{-- <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-        <td><a class="btn btn-primary" href="/edit">Edit</a></td>
-        <td><a class="btn btn-danger" href="/delete/1">Delete</a></td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-        <td><a class="btn btn-primary" href="/edit">Edit</a></td>
-        <td><a class="btn btn-danger" href="/delete/1">Delete</a></td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-        <td><a class="btn btn-primary" href="/edit">Edit</a></td>
-        <td><a class="btn btn-danger" href="/delete/1">Delete</a></td>
-      </tr> --}}
+        @foreach ($doctor as $dokter)
+            <tr>
+                <th>{{$dokter->doctor_id}}</th>
+                <td>{{$dokter->users->user_username}}</td>
+                <td>Dr. {{$dokter->users->user_nama_lengkap}}</td>
+                <td>{{$dokter->doctor_specialist}}</td>
+                <td>{{$dokter->doctor_experience}} tahun</td>
+                <td><a href=""><button class="btn btn-warning">Edit</button></a></td>
+            </tr>
+        @endforeach
     </tbody>
   </table>
 @endsection
