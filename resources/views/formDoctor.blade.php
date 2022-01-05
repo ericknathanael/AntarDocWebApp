@@ -31,9 +31,9 @@
                 <label for="inputState">Provinsi</label>
                 <select id="inputState" class="form-control" name="inputState">
                 <option value="-" selected>Pilih Daerah...</option>
-                <option value="Jatim">Jawa Timur</option>
-                <option value="Jateng">Jawa Tengah</option>
-                <option value="Jabar">Jawa Barat</option>
+                @foreach ($list_provinsi as $provinsi)
+                    <option value="{{$provinsi->prov_name}}">{{$provinsi->prov_name}}</option>
+                @endforeach
                 </select>
             </div>
         </div>
@@ -43,9 +43,9 @@
                 <label for="checkbox">Spesialis</label>
                 <select name="inputspesialis" class="form-control custom-control custom-select mb-3"" id="checkbox" required>
                   <option value="1"> - </option>
-                  <option value="Jantung">Jantung </option>
-                  <option value="Tulang">Tulang</option>
-                  <option value="Saraf">Saraf</option>
+                  @foreach ($list_spesialis as $spesialis)
+                    <option value="{{$spesialis->nama_spesialis}}">{{$spesialis->nama_spesialis}} </option>
+                  @endforeach
                 </select>
                 <div class="invalid-feedback">Example invalid custom select feedback</div>
             </div>

@@ -14,7 +14,6 @@
         <th scope="col">Name</th>
         <th scope="col">Spesialis</th>
         <th scope="col">Experience</th>
-        <th scope="col">Edit</th>
       </tr>
     </thead>
     <tbody>
@@ -25,7 +24,6 @@
                 <td>Dr. {{$dokter->users->user_nama_lengkap}}</td>
                 <td>{{$dokter->doctor_specialist}}</td>
                 <td>{{$dokter->doctor_experience}} tahun</td>
-                <td><a href=""><button class="btn btn-warning">Edit</button></a></td>
             </tr>
         @endforeach
     </tbody>

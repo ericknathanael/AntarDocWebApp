@@ -22,3 +22,11 @@ Route::post('/checkLogin',[site::class,'checkLogin']);
 Route::get('/home',[site::class,'login']);
 Route::get('/addDoctor',[site::class,'addDoctor']);
 Route::post('/insertDoctor',[site::class,'insertDoctor']);
+Route::get('/addSpesialis', [site::class, 'addSpesialis']);
+Route::post('/insertSpesialis', [site::class, 'insertSpesialis']);
+Route::prefix('/{idSpesialis}')->group(function () {
+    Route::get('/deleteSpesialis', [site::class, 'deleteSpesialis']);
+});
+Route::prefix('/{idDokter}')->group(function () {
+    Route::get('/editDokter', [site::class, 'EditDokter']);
+});

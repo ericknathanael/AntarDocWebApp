@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\doctor;
+use App\Models\province;
+use App\Models\spesialis;
 use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -39,7 +41,12 @@ class siteController extends Controller
     }
     public function addDoctor()
     {
-        return view('formDoctor');
+        $spesialis = spesialis::get();
+        $provinsi = province::get();
+        return view('formDoctor', [
+            'list_spesialis' => $spesialis,
+            'list_provinsi' => $provinsi
+        ]);
     }
 
     public function insertDoctor(Request $req)
@@ -76,11 +83,39 @@ class siteController extends Controller
 
         doctor::create([
             'user_id' => $userid,
-            'doctor_address' => $req->email_address,
+            'doctor_address' => $req->Address . " , " . $req->inputState,
             'doctor_experience' => $req->experienceinput,
             'doctor_specialist' => $req->inputspesialis
         ]);
 
         return redirect("/home");
+    }
+
+
+    public function addSpesialis()
+    {
+        $idspesialis = spesialis::max('id_spesialis');
+        $spesialis = spesialis::get();
+        return view('addspesialis', [
+            'spesialis' => $spesialis
+        ]);
+    }
+
+    public function insertSpesialis(Request $request)
+    {
+        spesialis::create([
+            'nama_spesialis' => $request->nama_spesialis
+        ]);
+
+        return redirect('/addSpesialis');
+    }
+
+    public function deleteSpesialis($idSpesialis)
+    {
+        $spesialis = spesialis::find($idSpesialis);
+
+        $result = $spesialis->delete();
+
+        return redirect('/addSpesialis');
     }
 }

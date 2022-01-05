@@ -13,10 +13,10 @@ class CreateChatKonsultasisTable extends Migration
      */
     public function up()
     {
-        Schema::create('chat_konsultasi', function (Blueprint $table) {
-            $table->id('id_chat');
-            $table->integer('id_sender');
-            $table->integer('id_receiver');
+        Schema::create('chat', function (Blueprint $table) {
+            $table->id('chatlist_id');
+            $table->text('chat_message');
+            $table->integer('chat_timestamp');
             $table->string('text_chat');
             $table->binary('chat_attachment')->nullable();
             $table->timestamps();
