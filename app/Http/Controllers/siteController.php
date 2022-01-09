@@ -51,24 +51,6 @@ class siteController extends Controller
 
     public function insertDoctor(Request $req)
     {
-        //dd($req->all());
-        $rules = [
-            "username" => 'required',
-            "nama_lengkap" => 'required',
-            "email_address" => 'required',
-            "Address" => 'required',
-            "inputState" => 'required',
-            "inputSpesialis" => 'required',
-            "experienceinput" => 'required',
-            "telephoneinput" => 'required'
-        ];
-        $errormsg = [
-            "username.required" => "username tidak boleh kosong",
-            "nama_lengkap.required" => "nama lengkap tidak boleh kosong",
-            "email_address" => "email tidak boleh kosong"
-        ];
-        //$this->validate($req,$rules,$errormsg);
-
         users::create([
             'user_username' => $req->username,
             'user_password' => Hash::make('123'),
